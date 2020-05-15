@@ -29,9 +29,9 @@ open class BarChartDataSet: BarLineScatterCandleBubbleChartDataSet, IBarChartDat
         initialize()
     }
     
-    public override init(entries: [ChartDataEntry]?, label: String?)
+    public override init(entries values: [ChartDataEntry]?, label: String?)
     {
-        super.init(entries: entries, label: label)
+        super.init(entries: values, label: label)
         initialize()
     }
 
@@ -141,13 +141,16 @@ open class BarChartDataSet: BarLineScatterCandleBubbleChartDataSet, IBarChartDat
     open var barShadowColor = NSUIColor(red: 215.0/255.0, green: 215.0/255.0, blue: 215.0/255.0, alpha: 1.0)
 
     /// the width used for drawing borders around the bars. If borderWidth == 0, no border will be drawn.
-    open var barBorderWidth : CGFloat = 0.0
+    open var barBorderWidth: CGFloat = 0.0
 
     /// the color drawing borders around the bars.
     open var barBorderColor = NSUIColor.black
 
     /// the alpha value (transparency) that is used for drawing the highlight indicator bar. min = 0.0 (fully transparent), max = 1.0 (fully opaque)
     open var highlightAlpha = CGFloat(120.0 / 255.0)
+    
+    /// corners to be rounded
+    open var roundedCorners: UIRectCorner = []
     
     // MARK: - NSCopying
     

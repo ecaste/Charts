@@ -41,7 +41,6 @@ class BarChartViewController: DemoBaseViewController {
         self.setup(barLineChartView: chartView)
         
         chartView.delegate = self
-        
         chartView.drawBarShadowEnabled = false
         chartView.drawValueAboveBarEnabled = false
         
@@ -133,7 +132,7 @@ class BarChartViewController: DemoBaseViewController {
             set1 = BarChartDataSet(entries: yVals, label: "The year 2017")
             set1.colors = ChartColorTemplates.material()
             set1.drawValuesEnabled = false
-            
+            set1.roundedCorners = [.topLeft,.topRight]
             let data = BarChartData(dataSet: set1)
             data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
             data.barWidth = 0.9
